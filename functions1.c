@@ -105,7 +105,6 @@ int print_hexadecimal(va_list types, char buffer[],
  * @types: list of arguments
  * @buffer: buffer array to handle print
  * @flags: calculates active flags
- * @flag_ch: calculates active flags
  * @width: get width
  * @precision: precision specification
  * @size: size specifier
