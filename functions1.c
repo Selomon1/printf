@@ -3,6 +3,7 @@
 /************************* PRINT UNSIGNED NUMBER *************************/
 /**
  * print_unsigned - prints an unsigned number
+ * by Hilina and Selomon
  * @types: list of arguments
  * @buffer: buffer array to handle print
  * @flags: calculates active flags
@@ -11,7 +12,7 @@
  * @size: size specifier
  * Return: Number of chars printed
  */
-int print_unsigned(va_list types, char buffer[], 
+int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
@@ -22,7 +23,7 @@ int print_unsigned(va_list types, char buffer[],
 	if (num == 0)
 		buffer[i--] = '0';
 
-	buffer{BUFF_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
@@ -38,6 +39,7 @@ int print_unsigned(va_list types, char buffer[],
 /************* PRINT UNSIGNED NUMBER IN OCTAL *************/
 /**
  * print_octal - prints an unsigned number in octal notation
+ * by Hilina and Selomon
  * @types: list of arguments
  * @buffer: buffer array to handle print
  * @flags: calculates active flags
@@ -46,7 +48,7 @@ int print_unsigned(va_list types, char buffer[],
  * @size: size specifier
  * Return: Number of chars printed
  */
-int print_octal(va_list types, char buffer[], 
+int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
@@ -79,6 +81,7 @@ int print_octal(va_list types, char buffer[],
 /************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 /**
  * print_hexadecimal - prints an unsigned number in hexadecimal notation
+ * by Selomon and Hilina
  * @types: list of arguments
  * @buffer: buffer array to handle print
  * @flags: calculates active flags
@@ -87,16 +90,17 @@ int print_octal(va_list types, char buffer[],
  * @size: size specifier
  * Return: Number of chars printed
  */
-int print_hexadecimal(va_list types, char buffer[], 
+int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(types, "0123456789abcdef", buffer, 
+	return (print_hexa(types, "0123456789abcdef", buffer,
 		flags, 'x', width, precision, size));
 }
 
 /************** PRINT HEXX NUM IN LOWER OR UPPER **************/
 /**
  * print_octal - prints a hexadecimal number in lower or upper
+ * by Selomon and Hilina
  * @map_to: array of values to map the number to
  * @types: list of arguments
  * @buffer: buffer array to handle print
@@ -108,7 +112,7 @@ int print_hexadecimal(va_list types, char buffer[],
  * @size: size specification
  * Return: Number of chars printed
  */
-int print_hexa(va_list types, char map_to[], char buffer[], 
+int print_hexa(va_list types, char map_to[], char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
