@@ -1,4 +1,4 @@
-#inlude "main.h"
+#include "main.h"
 
 /************************* PRINT CHAR *************************/
 
@@ -18,7 +18,7 @@ int print_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (handle_write_char(c, buffer, flags, width, precisio, size));
+	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /************************* PRINT STRING *************************/
 /**
@@ -55,7 +55,7 @@ int print_string(va_list types, char buffer[],
 		length++;
 
 	if (precision >= 0 && precision < length)
-		length - precision;
+		length = precision;
 
 	if (width > length)
 	{
@@ -145,7 +145,8 @@ int print_int(va_list types, char buffer[],
 
 	i++;
 
-	return (write_number(is_negative, i, buffer, flags, width, precion, size));
+	return (write_number(is_negative, i, buffer, flags, width,
+				precision, size));
 }
 
 /************************* PRINT BINARY *************************/
