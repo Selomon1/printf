@@ -1,11 +1,11 @@
 #include "main.h"
 
-int _printf(const char *format, ...);
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - printf function
- * @format: format
+ * _printf - function that produces output according to a format
+ * @format: format is a character string
+ *
  * by Selomon and Hilina
  * Return: printed chars
  */
@@ -55,9 +55,9 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - prints the contents of the buffer if it exists
- * @buffer: array of chars
- * @buff_ind: index at which to add next char, reprents the length
+ * print_buffer - prints the contents of the buffer if exists
+ * @buffer: array of characters
+ * @buff_ind: index at which to add next char, represent the length
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
