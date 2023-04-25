@@ -3,11 +3,11 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - function that produces output according to a format
- * @format: format is a character string
+ * _printf -  function that produces output according to a format
+ * by Hilina and Selomon
+ * @format: a character string
  *
- * by Selomon and Hilina
- * Return: printed chars
+ * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			size = get_size(format, &i);
 			++i;
 			printed = handle_print(format, &i, list, buffer,
-						flags, width, precision, size);
+				flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
@@ -55,13 +55,16 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - prints the contents of the buffer if exists
- * @buffer: array of characters
- * @buff_ind: index at which to add next char, represent the length
+ * print_buffer - Prints the contents of the buffer if it exist
+ * by Hilina and Selomon
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
  */
+
 void print_buffer(char buffer[], int *buff_ind)
 {
 	if (*buff_ind > 0)
 		write(1, &buffer[0], *buff_ind);
+
 	*buff_ind = 0;
 }

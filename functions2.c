@@ -1,16 +1,19 @@
 #include "main.h"
+/****************** PRINT POINTER *****************/
 
-/****************** PRINT POINTER ******************/
 /**
- * print_pointer - prints the value of a pointer variable
- * @types: list of arguments
- * @buffer: buffer array to handle print
- * @flags: calculates active flags
+ * print_pointer - Prints the value of a pointer variable
+ * by Hilina and Selomon
+ * @types: List a of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
  * @width: get width
- * @precision: precision specification
- * @size: size specifier
- * Return: Number of chars printed
+ * @precision: Precision specification
+ * @size: Size specifier
+ *
+ * Return: Number of chars printed.
  */
+
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -54,15 +57,18 @@ int print_pointer(va_list types, char buffer[],
 
 /************************* PRINT NON PRINTABLE *************************/
 /**
- * print_non_printable - prints ascii codes in hexa of non printable chars
- * @types: list of arguments
- * @buffer: buffer array to handle print
- * @flags: calculates active flags
+ * print_non_printable - Prints ascii codes in hexa of non printable chars
+ * by Hilina and Selomon
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
  * @width: get width
- * @precision: precision specification
- * @size: size specifier
+ * @precision: Precision specification
+ * @size: Size specifier
+ *
  * Return: Number of chars printed
  */
+
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -75,7 +81,7 @@ int print_non_printable(va_list types, char buffer[],
 	UNUSED(size);
 
 	if (str == NULL)
-		return (write(1, "null)", 6));
+		return (write(1, "(null)", 6));
 
 	while (str[i] != '\0')
 	{
@@ -94,24 +100,27 @@ int print_non_printable(va_list types, char buffer[],
 
 /************************* PRINT REVERSE *************************/
 /**
- * print_reverse - prints reverse string
- * @types: list of arguments
- * @buffer: buffer array to handle print
- * @flags: calculates active flags
+ * print_reverse - Prints reverse string.
+ * by Hilina and Selomon
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
  * @width: get width
- * @precision: precision specification
- * @size: size specifier
- * Return: Number of chars printed
+ * @precision: Precision specification
+ * @size: Size specifier
+ *
+ * Return: Numbers of chars printed
  */
+
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
 	int i, count = 0;
 
+	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
-	UNUSED(buffer);
 	UNUSED(size);
 
 	str = va_arg(types, char *);
@@ -134,18 +143,20 @@ int print_reverse(va_list types, char buffer[],
 	}
 	return (count);
 }
-
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
- * print_rot13string - prints a string in rot13
- * @types: list of arguments
- * @buffer: buffer array to handle print
- * @flags: calculates active flags
+ * print_rot13string - Print a string in rot13.
+ * by Hilina and Selomon
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
  * @width: get width
- * @precision: precision specification
- * @size: size specifier
- * Return: Number of chars printed
+ * @precision: Precision specification
+ * @size: Size specifier
+ *
+ * Return: Numbers of chars printed
  */
+
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -160,8 +171,8 @@ int print_rot13string(va_list types, char buffer[],
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
-	UNUSED(size);
 	UNUSED(precision);
+	UNUSED(size);
 
 	if (str == NULL)
 		str = "(AHYY)";
